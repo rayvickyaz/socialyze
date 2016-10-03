@@ -1,0 +1,81 @@
+<ion-view view-title="Socialyze" class="login-bg" cache-view="false">
+  <div ng-if="!isGPlogin">
+
+
+  <ion-content class="login">
+
+      <div class="overlay"></div>
+    <div class="content">
+        <img src="img/logo.png" />
+        <h2>Socialyze</h2>
+        <h4>Social Skill Analyze</h4>
+        <h5>100% customizable for any Android & iOS apps.</h5>
+
+
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Google Connect API</div>
+            </div>
+            <button class="button icon-left ion-social-google button-assertive" ng-click="GPlogin()">Connect with Google</button>
+        </div>
+
+      <p class="note">Only works on your real device, not in browser</p>
+
+    </ion-content>
+</div>
+
+        <div ng-if="isGPlogin" ng-controller="GpProfileCtrl">
+
+          <ion-content class="me">
+            <div class="overlay"></div>
+            <div class="cover" style="background-image: url({{me.cover.source}});">
+                <div class="profile">
+                    <div class="img" style="background-image: url({{me.picture}});"></div>
+                    <div class="name">{{me.name}}</div>
+                </div>
+            </div>
+            <ion-list>
+        		<ion-item class="item item-icon-left">
+        			<i class="icon ion-card"></i>
+        			{{me.id}}
+        		</ion-item>
+        		<ion-item class="item item-icon-left">
+        			<i class="icon ion-email"></i>
+        			{{me.email}}
+        		</ion-item>
+        		<ion-item class="item item-icon-left">
+        			<i class="icon ion-male"></i>
+        			{{me.gender}}
+        		</ion-item>
+        		<ion-item class="item item-icon-left">
+        			<i class="icon ion-link"></i>
+        			{{me.link}}
+        		</ion-item>
+            <div ng-if="!isTested">
+            <ion-item class="item item-icon-left">
+        			<i class="icon ion-link"></i>
+        			<!--{{me.link}}-->
+              <button class="button icon-left ion-social-google button-assertive" ng-click="GPlogin()">Take a Test</button>
+        		</ion-item>
+           </div>
+           <div ng-if="isTested">
+           <ion-item class="item item-icon-left">
+             <i class="icon ion-link"></i>
+             <!--{{me.link}}-->
+             {{me.type}}
+           </ion-item>
+          </div>
+        		<ion-item class="item item-divider">
+        			Exit Google Plus API
+        		</ion-item>
+        		<ion-item class="item item-icon-left" ng-click="gpLogout();">
+        			<i class="icon ion-android-exit"></i>
+        			Logout
+        		</ion-item>
+        	</ion-list>
+          </ion-content>
+      </div>
+
+
+</ion-view>

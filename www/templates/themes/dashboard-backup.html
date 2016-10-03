@@ -1,0 +1,151 @@
+//Halaman Utama
+
+<!-- //and this
+<ion-view view-title="Dashboard" class="dash">
+  <ion-content>
+      <ion-slide-box auto-play="1000" does-continue="true" class="slider">
+          <ion-slide>
+              <div class="img" style="background-image: url(img/dashboard/slide1.jpg)"></div>
+          </ion-slide>
+          <ion-slide>
+              <div class="img" style="background-image: url(img/dashboard/slide2.jpg)"></div>
+          </ion-slide>
+      </ion-slide-box>
+  	<ion-list>
+      <div class="row" ng-repeat="x in mainmenu" ng-if="$index%3==0" class="animate-fade-slide-in">
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index].id})" ng-if="$index < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index].icon}}"></span>
+          <p>{{mainmenu[$index].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+1].id})" ng-if="$index+1 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+1].icon}}"></span>
+          <p>{{mainmenu[$index+1].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+2].id})" ng-if="$index+2 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+2].icon}}"></span>
+          <p>{{mainmenu[$index+2].title}}</p>
+        </div>
+      </div>
+  	</ion-list>
+  </ion-content>
+</ion-view>
+
+//delete these thing -->
+
+<!-- log Sunday, August 21,2016
+- can add menus in dash
+- next make a new .state at app.js, a new page for login, new controller for login that not load side menu
+- in dashlistctrl give statement if user login then true, if user !login then to the login page
+- login page after action go to dashboard
+- decide which one is home, dashboard or login (if login please direct to dashboard ifLogin)
+
+
+<ion-view view-title="Sign In" class="login-bg" ng-if="!isGPlogin && !isFBlogin" hide-nav-bar="true" ng-controller="disableDrag">
+
+    <ion-content class="login">
+    <div class="overlay"></div>
+    <div class="content">
+        <img src="img/logo.png" />
+        <h2>Socialyze</h2>
+        <h4>Social Skill Analyze</h4>
+        <h5>100% customizable for any Android & iOS apps.</h5>
+
+
+
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Belum Login?</div>
+            </div>
+            <button class="button icon-left ion-social-google button-assertive" ng-controller="GpLoginCtrlFirst" ng-click="GPlogin()">Conneckt with Google</button>
+            <button class="button icon-left ion-social-facebook button-positive" ng-controller="FbLoginCtrlFirst" ng-click="FBlogin()">Connect with Facebook</button>
+              <p class="note">Only works on your real device, not in browser</p>
+        </div>
+
+    </ion-content>
+  </ion-view>
+-->
+
+<!-- kalo udah login -->
+
+<!--<ion-view view-title="Socialyze" class="dash" ng-if="isGPlogin || isFBlogin">-->
+
+
+<ion-view view-title="Socialyze" class="dash">
+
+<!-- kalo udah login   <ion-content>
+
+                <div ng-if="!isFBlogin && !isGPlogin" >
+                    <div class="content">
+                      <h4><center>Kamu belum login lho!</h4>
+                        <button class="button icon-left ion-social-google button-assertive" ng-controller="GpLoginCtrl" ng-click="GPlogin()">Connect with Google</button>
+                        <button class="button icon-left ion-social-facebook button-positive" ng-controller="FbLoginCtrl" ng-click="FBlogin()">Connect with Facebook</button>
+                  </div>
+                </div>
+                </div>
+
+
+                  <div ng-if="isFBlogin || isGPlogin" ng-controller="FbProfileCtrl && GpProfileCtrl">
+
+                  <ion-slide-box auto-play="1000" does-continue="true" class="slider">
+                      <ion-slide>
+                          <div class="img" style="background-image: url(img/dashboard/slide1.jpg)"></div>
+                      </ion-slide>
+                      <ion-slide>
+                          <div class="img" style="background-image: url(img/dashboard/slide2.jpg)"></div>
+                      </ion-slide>
+                  </ion-slide-box>
+                <ion-list>
+                  <div class="row" ng-repeat="x in mainmenu" ng-if="$index%3==0" class="animate-fade-slide-in">
+                    <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index].id})" ng-if="$index < mainmenu.length">
+                      <span class="iconmenu icon {{mainmenu[$index].icon}}"></span>
+                      <p>{{mainmenu[$index].title}}</p>
+                    </div>
+                    <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+1].id})" ng-if="$index+1 < mainmenu.length">
+                      <span class="iconmenu icon {{mainmenu[$index+1].icon}}"></span>
+                      <p>{{mainmenu[$index+1].title}}</p>
+                    </div>
+                    <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+2].id})" ng-if="$index+2 < mainmenu.length">
+                      <span class="iconmenu icon {{mainmenu[$index+2].icon}}"></span>
+                      <p>{{mainmenu[$index+2].title}}</p>
+                    </div>
+                  </div>
+                  </div>
+                </ion-list>
+
+              </ion-content>-->
+              <ion-content class="me">
+                <div class="cover" style="background-image: url({{me.cover.source}});">
+                    <div class="profile">
+                        <div class="img" style="background-image: url({{me.picture}});"></div>
+                        <div class="name">{{me.name}}</div>
+                    </div>
+                </div>
+                <ion-list>
+            		<ion-item class="item item-icon-left">
+            			<i class="icon ion-card"></i>
+            			{{me.id}}
+            		</ion-item>
+            		<ion-item class="item item-icon-left">
+            			<i class="icon ion-email"></i>
+            			{{me.email}}
+            		</ion-item>
+            		<ion-item class="item item-icon-left">
+            			<i class="icon ion-male"></i>
+            			{{me.gender}}
+            		</ion-item>
+            		<ion-item class="item item-icon-left">
+            			<i class="icon ion-link"></i>
+            			{{me.link}}
+            		</ion-item>
+            		<ion-item class="item item-divider">
+            			Exit Google Plus API
+            		</ion-item>
+            		<ion-item class="item item-icon-left" ng-click="gpLogout();">
+            			<i class="icon ion-android-exit"></i>
+            			Logout
+            		</ion-item>
+            	</ion-list>
+              </ion-content>
+
+</ion-view>

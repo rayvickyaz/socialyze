@@ -1,0 +1,30 @@
+<!-- ion-view view-title="Welcome to Socialyze" class="login-bg" ng-if="!isGPlogin && !isFBlogin" hide-nav-bar="true">
+
+ganti deh halaman utama ini aja
+
+-->
+
+
+<ion-view view-title="Welcome to Socialyze" class="login-bg" hide-nav-bar="true">
+      <ion-content class="login">
+      <div class="overlay"></div>
+      <div class="content">
+          <img src="img/logo.png" />
+          <h2>Socialyze</h2>
+          <h4>Social Skill Analyze</h4>
+          <h5>100% customizable for any Android & iOS apps.</h5>
+
+
+
+              <div class="divider">
+                  <div class="line left"></div>
+                  <div class="line right"></div>
+                  <div class="text">Belum Login?</div>
+              </div>
+              <button class="button icon-left ion-social-google button-assertive" ng-controller="GpLoginCtrlFirst" ng-click="GPlogin()">Connect with Google</button>
+              <button class="button icon-left ion-social-facebook button-positive" ng-controller="FbLoginCtrlFirst" ng-click="FBlogin()">Connect with Facebook</button>
+                <p class="note">Only works on your real device, not in browser</p>
+          </div>
+
+      </ion-content>
+    </ion-view>
